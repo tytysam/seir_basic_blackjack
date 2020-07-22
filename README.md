@@ -7,6 +7,6 @@
 
 ### 3. Algo Practice - EST TIME: 1hr
 
-- [Find Missing Nums](ALGO.md)
+- Linked List in Ruby
 
 ### 4.  Interview Practice - EST TIME: 20min
