@@ -7,4 +7,6 @@
 
 ### 3. Algo Practice - EST TIME: 1hr
 
+- [Find Missing Nums](ALGO.md)
+
 ### 4.  Interview Practice - EST TIME: 20min
