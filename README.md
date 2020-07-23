@@ -1,7 +1,7 @@
 # W10D03-HW
 
 ### 1. Ruby Blackjack: 2hr
-- [Ruby Blackjack](https://git.generalassemb.ly/SEIR-526/ruby-blackjack)
+- [Ruby Blackjack](./blackjack.md)
 
 ### 2. Read - EST TIME: 30min
 
