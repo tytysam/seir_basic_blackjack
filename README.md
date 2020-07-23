@@ -5,8 +5,6 @@
 
 ### 2. Read - EST TIME: 30min
 
-### 3. Algo Practice - EST TIME: 1hr
-
-- Linked List in Ruby
+### 3. Algo Practice
 
 ### 4.  Interview Practice - EST TIME: 20min
