@@ -78,14 +78,12 @@ This game will be made up of two players. One will be a person interacting with 
 
 **Bonus** - Allow a player to add a card to their hand
 
+**Bonus** - User Experience in the console
+  - Let the player check their bankroll at any time
+  - Let the player lose if their bankroll falls below 0
+  - Let the player choose another amount of money to bet if they don't want to bet the default
 
-### User Experience in the console
-
-- Let the player check their bankroll at any time
-- Let the player lose if their bankroll falls below 0
-- Let the player choose another amount of money to bet if they don't want to bet the default
-
-Bonus add functionality for a player to choose to 'stay' (keep current cards' or 'hit' add one more card to their hand)
+**Bonus** - Bonus add functionality for a player to choose to 'stay' (keep current cards' or 'hit' add one more card to their hand)
 
 ## Considerations
 - Should there be a game object/game class? How can you tell when you need one?
