@@ -54,7 +54,7 @@ This game will be made up of two players. One will be a person interacting with 
 - Create a console game that lets a player choose their name and then starts the game
 - Make sure the console is printing informative messages to allow the player to know what is happening and what to do next
 - Each player gets two random cards
-- The player with the larger sum of their wins the round
+- The player with the larger sum of their cards wins the round
  - Hint: What if the Player class had a method that summed the values of the two cards? Note, there are also numerous other ways to solve it, but this would let you practice with class methods.
   - Hint 2: Practice YAGNI (You Ain't Gonna Need It), for now your game just needs to sum 2 cards, find the simplest solution to do that. Don't worry about coming up with a soution that will let you sum any number of cards until you get to the point where you need to be able to do it(that's in the bonus section).
 - By default a round is worth 10 dollars.
