@@ -63,7 +63,7 @@ This game will be made up of two players. One will be a person interacting with 
 - If there is a tie, let the players know there is a tie and no bankrolls are affected
 - The game ends after one round
 
-**Bonus** 
+# **Bonus** 
 
 ### Getting Loopy
 - Write a loop that lets the player choose "(d)eal or "(q)uit"
