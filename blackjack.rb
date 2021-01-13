@@ -3,6 +3,8 @@ class Player
 
   def initialize name, bankroll
     @name = name
+    # *** to-do: LET THE PLAYER ENTER THEIR OWN NAME
+    # @name = gets.chomp.to_s (???)
     @bankroll = bankroll
     @hand = [1,27]
   end
@@ -14,15 +16,15 @@ class Player
   def draw_cards
     # Randomly "draw" two cards (.sample(2)???) from the_deck
     # Add both cards to our hand
+
+    # Could I use this method in tandem with a method on the Deck class...?
   end
 
 end
 
-humanPlayer = Player.new "Tyler", 100
-computerPlayer = Player.new "The House", 10000
+human = Player.new "Tyler", 100
+the_house = Player.new "The House", 10000
 
-# p humanPlayer.sum_cards
-# p computerPlayer.sum_cards
 
 # ==================================================
 
@@ -49,6 +51,7 @@ class Deck
     @deck = @deck.shuffle
   end
 end
+
 
 # ==================================================
 
@@ -95,3 +98,8 @@ class Game
   # ~ ~ BONUS ~ ~
   # Evaluate result... if win ==> remove wager from the_house and add wager to bankroll... if lose ==> remove wager from bankroll and add wager to the_house
 end
+
+
+
+the_house = Deck.new
+p the_house.deck
