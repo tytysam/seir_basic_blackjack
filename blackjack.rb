@@ -4,7 +4,11 @@ class Player
   def initialize name, bankroll
     @name = name
     @bankroll = bankroll
-    @hand = []
+    @hand = [1,27]
+  end
+
+  def sum_cards
+    self.hand.reduce(0) { |sum, num| sum + num }
   end
 
 end
@@ -12,8 +16,8 @@ end
 humanPlayer = Player.new "Tyler", 100
 computerPlayer = Player.new "The House", 10000
 
-# p humanPlayer.bankroll
-# p computerPlayer.bankroll
+# p humanPlayer.sum_cards
+# p computerPlayer.sum_cards
 
 deck = []
 
@@ -25,3 +29,5 @@ class PlayingCard
   end
 
 end
+
+# SUITS ==> clubs (♣) | diamonds (♦) | hearts (♥) | spades (♠)
