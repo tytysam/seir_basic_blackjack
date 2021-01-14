@@ -1,29 +1,24 @@
 class Player
-  attr_accessor :name, :bankroll, :hand
+  attr_accessor :bankroll, :hand
 
-  def initialize name, bankroll
-    @name = name
-    # *** to-do: LET THE PLAYER ENTER THEIR OWN NAME
-    # @name = gets.chomp.to_s (???)
+  def initialize bankroll
     @bankroll = bankroll
-    @hand = [1,27]
+    @hand = []
   end
 
   def sum_cards
     self.hand.reduce(0) { |sum, num| sum + num }
   end
 
-  def draw_cards
+  def draw_card
     # Randomly "draw" two cards (.sample(2)???) from the_deck
     # Add both cards to our hand
+    self.hand.push @shuffled_deck.value.shift
 
     # Could I use this method in tandem with a method on the Deck class...?
   end
 
 end
-
-human = Player.new "Tyler", 100
-the_house = Player.new "The House", 10000
 
 
 # ==================================================
@@ -45,10 +40,13 @@ class Deck
     @deck
   end
 
-  # *** To-Do: DEAL METHOD
+  def deal
+    2.times {human.draw_card}
+    2.times {the_house.draw_card}
+  end
 
   def shuffle 
-    @deck = @deck.shuffle
+    @shuffled_deck = @deck.shuffle
   end
 end
 
@@ -58,7 +56,7 @@ end
 # SUITS ==> clubs (♣) | diamonds (♦) | hearts (♥) | spades (♠)
 
 class PlayingCard
-  attr_reader :value
+  attr_reader :suit, :value
 
   def initialize suit, value
     @suit = suit
@@ -87,6 +85,31 @@ end
 
 class Game
 
+  def initialize
+    puts 'Welcome to Blackjack! Ready to play? (Y/N)'
+    user_input = gets.to_s.chomp.downcase
+
+    if user_input = 'y' || user_command == ''
+      @deck = Deck.new
+      @deck.shuffle
+      human = Player.new 100
+      the_house = Player.new 10000
+      
+      player_name = ''
+      puts 'Enter your name below:'
+      player_name = gets.chomp
+      puts "#{player_name} let's play Blackjack!"
+      @deck.deal
+      puts human.hand
+    end
+    # *** to-do: the other half of this control flow...
+
+
+    # *** to-do: include a method that will 
+  end
+
+  
+
   # Display welcome message... User input starts game
   # (ie, "Welcome to Blackjack - would you like to play? (Y/N)")
 
@@ -102,4 +125,6 @@ end
 
 
 the_house = Deck.new
-p the_house.deck
+p the_house.shuffle
+
+game = Game.new
