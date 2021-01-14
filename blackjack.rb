@@ -14,7 +14,7 @@ class Player
 
   def initialize bankroll
     @bankroll = bankroll
-    @hand = [1,2]
+    @hand = [10,11]
   end
 
   def sum_cards
@@ -25,7 +25,7 @@ class Player
     # Randomly "draw" two cards (.sample(2)???) from the_deck
     # Add both cards to our hand
 
-    self.hand.push @shuffled_deck.shift
+    self.hand.push {@shuffled_deck.shift}
     # Could I use this method in tandem with a method on the Deck class...?
   end
 
@@ -38,11 +38,13 @@ end
 
 class Deck
   attr_reader :deck
+  attr_accessor :shuffled_deck
 
   def initialize
     @suits = ['clubs', 'diamonds', 'hearts', 'spades']
     @values = [2,3,4,5,6,7,8,9,10,10,10,10,11]
     @deck = []
+    @shuffled_deck = []
 
     @suits.each do |suit|
       @values.each do |value|
@@ -59,7 +61,7 @@ class Deck
   end
 
   def shuffle 
-    @deck.shuffle
+    @shuffled_deck = @deck.shuffle
   end
 end
 
@@ -91,7 +93,7 @@ class Game
 
     if user_input = 'y' || user_command == ''
       @deck = Deck.new
-      @shuffled_deck = @deck.shuffle
+      @deck.shuffle
       the_human = Player.new 100
       the_house = Player.new 10000
       
@@ -99,22 +101,42 @@ class Game
       puts 'Enter your name below:'
       player_name = gets.chomp
       puts "Welcome #{player_name}! Let's play Blackjack!"
+      the_human.bankroll -= 10
+      the_house.bankroll -= 10
       @deck.deal(the_human, the_house)
+
       puts the_human.hand
+      puts the_house.hand
     end
     # *** to-do: the other half of this control flow...
 
-
+    self.check_score
     # *** to-do: include a method that will kick off the next phase of the game...
   end
 
   def check_score
-    #add the values in each hand
+    human_score = the_human.sum_cards
+    house_score = the_house.sum_cards
+
+    # add the values in each hand
     # store values as two individual variables
+
+    self.check_winner
+    # *** to-do: include a method that will kick off the next phase of the game...
   end
 
   def check_winner human_score, house_score
     # use variables from above to determine a winner
+    if human_score > house_score
+      puts "Congrats #{player_name}, you won!"
+      the_human.bankroll += 20
+    elsif human_score == house_score
+      puts "What are the odds — it's a tie!"
+
+    else 
+      puts "Better luck next time – the House won!"
+      the_house.bankroll += 20
+    end
   end
   
 
